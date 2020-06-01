@@ -1,0 +1,11 @@
+# configuration values
+[DEFAULT]
+debug = True
+[SolarEdge]
+ApiKey = ABCDEFGHIJKLMNOPQRSTUVWXYZ12345
+ObjectId = 1234567
+URL = https://monitoringapi.solaredge.com/site/
+[EmonCMS]
+ApiKey = 0123456789abcdef01234567890abcde
+Node = SE1
+URL = https://emoncms.yourserver.com
