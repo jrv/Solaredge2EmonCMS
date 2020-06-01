@@ -10,7 +10,7 @@ import configparser
 
 config = configparser.ConfigParser()
 config.read("solarEdge2emonCMS.ini")
-debug = config['DEFAULT']['debug']
+debug = ( config['DEFAULT']['debug'] == "True")
 
 # check EmonCMS to get the last upload timestamp
 # and set a timeframe for the next SolarEdge Download
@@ -36,7 +36,7 @@ for x in data:
 
 if (ctmax < ct + 15*60):
 	if (debug): print('Already up to date')
-	sys.exit()
+	sys.exit(1)
 
 solarEdgeQuery = config['SolarEdge']['URL'] \
 	+ config['SolarEdge']['ObjectId'] + "/power.json" + "?startTime=" \
